@@ -40,9 +40,10 @@ void MyString::Print()
 
 void MyString::MyStrcpy(MyString& obj)
 {
-	str = new char[strlen(str) + 1];
+	str = new char[strlen(obj.str) + 1];
 	strcpy_s(str, strlen(obj.str) + 1, obj.str);
-	cout << "Copy constructor";
+	str = obj.str;
+	cout << " \nConstructor Copy: " << obj.str << endl;
 }
 
 void MyString::Input()

@@ -11,5 +11,8 @@ int main()
 
 	/*obj.Input();*/
 	obj.MyStrLen();
-
+	MyString obj1 = obj;
+	obj.MyStrcpy(obj1);
+	int symbol = obj.MyChr('o');
+	cout << symbol;
 }
