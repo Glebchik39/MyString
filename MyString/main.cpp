@@ -9,10 +9,16 @@ int main()
 
 	cout<<obj.MyStrStr("wo")<<endl;
 
-	/*obj.Input();*/
+	obj.Input();
 	obj.MyStrLen();
 	MyString obj1 = obj;
 	obj.MyStrcpy(obj1);
 	int symbol = obj.MyChr('o');
 	cout << symbol;
+	MyString obj1 = move(obj);
+	obj.MyStrCat(obj);
+	obj.MyStrCat(obj1);
+	obj.MyDelChr('H');
+	obj.MyStrCmp(obj);
+	obj.Print();
 }

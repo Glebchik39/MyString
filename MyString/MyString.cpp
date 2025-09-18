@@ -48,7 +48,7 @@ void MyString::MyStrcpy(MyString& obj)
 
 void MyString::Input()
 {
-	str = new char;
+	str = new char[length + 1];
 	cin >> str;
 	length = strlen(str);
 }
@@ -68,7 +68,7 @@ bool MyString::MyStrStr(const char* st)
 
 int MyString::MyChr(char c)
 {
-	char str[] = "Hello, world!";
+	char str[] = "Hello World";
 	for (int i = 0; str[i] != '\0'; i++) {
 		if (str[i] == c) {
 				return i; 
@@ -82,23 +82,48 @@ int MyString::MyStrLen()
 {
 	if (str != nullptr)
 	{
+		length = strlen(str);
 		cout << "Dlina striki: " << strlen(str);
 	}
-	return strlen(str);
+	return length;
 }
 
-//void MyString::MyDelChr(char c)
-//{
-//	for (size_t str = 0; str < '\0'; str++)
-//	{
-//
-//	}
-//}
 
-//void MyString::MyStrCat(MyString& b)
-//{
-//
-//
-//}
+MyString::MyString(MyString&& obj)
+{
+	str = obj.str;
+	obj.str = nullptr;
+	length = obj.length;
+	obj.length = 0;
+	cout << "Move constructor";
+}
+
+void MyString::MyStrCat(MyString& b)
+{
+	int maxlenght = b.length + b.length;
+	char* newStr = new char[maxlenght + 1];
+	cout << strcat(newStr, b.str);
+}
+
+void MyString::MyDelChr(char c)
+{
+	cout << "Enter a symbol: ";
+	cin >> c;
+	for (size_t i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] == c)
+		{
+			delete[] str;
+		}
+	}
+}
+
+int MyString::MyStrCmp(MyString& b)
+{
+	cout << "Sravnenie strok: " << strcmp(b.str, str);
+}
+
+
+
 
 
