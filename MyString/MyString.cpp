@@ -8,6 +8,8 @@ MyString::MyString()
 	str = new char[length];
 }
 
+
+
 MyString::MyString(int size)
 {
 	length = size;
@@ -50,7 +52,7 @@ void MyString::Input()
 {
 	str = new char;
 	cin >> str;
-	length = strlen(str);
+	length = strlen(str); 
 }
 
 
@@ -85,6 +87,15 @@ int MyString::MyStrLen()
 		cout << "Dlina striki: " << strlen(str);
 	}
 	return strlen(str);
+}
+
+MyString::MyString(MyString&& obj)
+{
+	str = obj.str;
+	obj.str = nullptr;
+	length = obj.length;
+	obj.length = 0;
+	cout << "Move constructor";
 }
 
 //void MyString::MyDelChr(char c)

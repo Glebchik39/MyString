@@ -19,6 +19,7 @@ public:
 	/*void MyStrCat(MyString& b);*/ // объединение строк
 	/*void MyDelChr(char c);*/ // удаляет указанный символ 
 	//int MyStrCmp(MyString& b); // сравнение строк 
+	MyString(MyString&& obj);
 
 };
 

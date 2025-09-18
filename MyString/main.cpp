@@ -15,4 +15,7 @@ int main()
 	obj.MyStrcpy(obj1);
 	int symbol = obj.MyChr('o');
 	cout << symbol;
+
+	MyString obj1 = move(obj);
+	obj.Print();
 }
