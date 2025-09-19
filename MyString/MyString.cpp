@@ -8,6 +8,8 @@ MyString::MyString()
 	str = new char[length];
 }
 
+
+
 MyString::MyString(int size)
 {
 	length = size;
@@ -50,7 +52,7 @@ void MyString::Input()
 {
 	str = new char[length + 1];
 	cin >> str;
-	length = strlen(str);
+	length = strlen(str); 
 }
 
 
@@ -123,7 +125,22 @@ int MyString::MyStrCmp(MyString& b)
 	cout << "Sravnenie strok: " << strcmp(b.str, str);
 }
 
+MyString::MyString(MyString&& obj)
+{
+	str = obj.str;
+	obj.str = nullptr;
+	length = obj.length;
+	obj.length = 0;
+	cout << "Move constructor";
+}
 
+//void MyString::MyDelChr(char c)
+//{
+//	for (size_t str = 0; str < '\0'; str++)
+//	{
+//
+//	}
+//}
 
 
 
