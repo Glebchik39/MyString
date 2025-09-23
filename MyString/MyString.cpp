@@ -52,7 +52,6 @@ void MyString::MyStrcpy(MyString& obj)
 	strcpy_s(str, strlen(obj.str) + 1, obj.str);
 	str = obj.str;
 	cout << " \nConstructor Copy: " << obj.str << endl;
-	count++;
 }
 
 void MyString::Input()
@@ -60,7 +59,6 @@ void MyString::Input()
 	str = new char[length + 1];
 	cin >> str;
 	length = strlen(str); 
-	count++;
 }
 
 
@@ -143,14 +141,7 @@ void MyString::PrintCount()
 	cout << "Count = " << count << endl;
 }
 
-MyString::MyString(MyString&& obj)
-{
-	str = obj.str;
-	obj.str = nullptr;;
-	length = obj.length;
-	obj.length = 0;
-	cout << "Move constructor";
-}
+
 
 //void MyString::MyDelChr(char c)
 //{

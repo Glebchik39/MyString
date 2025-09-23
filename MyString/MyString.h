@@ -3,7 +3,6 @@ class MyString
 {
 	char* str;
 	int length;
-	static int count;
 public:
 	MyString();	
 	MyString(int size);
@@ -21,6 +20,8 @@ public:
 	void MyDelChr(char c); // удаляет указанный символ +
 	int MyStrCmp(MyString& b); // сравнение строк +
 	static void PrintCount();
+
+	static int count;
 };
 
 
