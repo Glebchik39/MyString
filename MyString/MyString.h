@@ -3,6 +3,7 @@ class MyString
 {
 	char* str;
 	int length;
+	static int count;
 public:
 	MyString();	
 	MyString(int size);
@@ -19,6 +20,7 @@ public:
 	void MyStrCat(MyString& b); // объединение строк+
 	void MyDelChr(char c); // удаляет указанный символ +
 	int MyStrCmp(MyString& b); // сравнение строк +
-
+	static void PrintCount();
 };
+
 

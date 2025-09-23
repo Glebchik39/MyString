@@ -21,4 +21,5 @@ int main()
 	obj.MyDelChr('H');
 	obj.MyStrCmp(obj);
 	obj.Print();
+	MyString::PrintCount();
 }
