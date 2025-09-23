@@ -146,7 +146,7 @@ void MyString::PrintCount()
 MyString::MyString(MyString&& obj)
 {
 	str = obj.str;
-	obj.str = nullptr;
+	obj.str = nullptr;;
 	length = obj.length;
 	obj.length = 0;
 	cout << "Move constructor";
