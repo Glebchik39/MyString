@@ -21,4 +21,34 @@ int main()
 	obj.MyDelChr('H');
 	obj.MyStrCmp(obj);
 	obj.Print();
+	MyString rez = obj + obj1;
+	MyString rez2 = obj + " !!!";
+	MyString rez3 = obj + '?';
+	MyString rez4 = obj - "world";
+
+	if (obj > obj1)
+	{
+		cout << "obj > obj1";
+	}
+	else if (obj < obj1)
+	{
+		cout << "obj < obj1";
+	}
+	else if (obj >= obj1)
+	{
+		cout << "obj >= obj1";
+	}
+	else if (obj <= obj1)
+	{
+		cout << "obj <= obj1";
+	}
+	else if (obj = obj1)
+	{
+		cout << "obj = obj1";
+	}
+	if (obj > "Hello")
+	{
+
+	}
+
 }

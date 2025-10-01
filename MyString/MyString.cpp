@@ -125,6 +125,68 @@ int MyString::MyStrCmp(MyString& b)
 	cout << "Sravnenie strok: " << strcmp(b.str, str);
 }
 
+MyString MyString::operator+(MyString& obj)
+{
+	int NewLenght = obj.length + length;
+}
+
+bool MyString::operator=(MyString& obj)
+{
+	if (strcmp(str,obj.str) == 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator>(MyString& obj)
+{
+	if (strlen(str) > strlen(obj.str))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator<(MyString& obj)
+{
+	if (strlen(str) < strlen(obj.str))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator>=(MyString& obj)
+{
+	if (strlen(str) >= strlen(obj.str))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator<=(MyString& obj)
+{
+	if (strlen(str) <= strlen(obj.str))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool MyString::operator>(const char* st)
+{
+	int rez = strcmp(str, st);
+	if (rez == 1)
+	{
+		return true;
+	}
+	return false;
+}
+
+
+
 MyString::MyString(MyString&& obj)
 {
 	str = obj.str;
@@ -134,13 +196,9 @@ MyString::MyString(MyString&& obj)
 	cout << "Move constructor";
 }
 
-//void MyString::MyDelChr(char c)
-//{
-//	for (size_t str = 0; str < '\0'; str++)
-//	{
-//
-//	}
-//}
+
+
+
 
 
 
