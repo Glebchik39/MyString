@@ -138,7 +138,34 @@ int MyString::MyStrCmp(MyString& b)
 
 MyString MyString::operator+(MyString& obj)
 {
-	int NewLenght = obj.length + length;
+	int newLenght = obj.length + length;
+	char* newstr = new char[newLenght + 1];
+	strcpy(newstr,obj.str);
+	return newstr;
+}
+
+MyString MyString::operator+(const char* str)
+{
+	const char* str = "Hello";
+	const char* prefix = "!!!";
+	int newLenght = strlen(str) + strlen(prefix);
+	char* newStr = new char[newLenght + 1];
+	strcpy(newStr, prefix);
+	strcat(newStr, str);
+}
+
+MyString MyString::operator+(char c)
+{
+}
+
+MyString MyString::operator-(const char* str)
+{
+	const char* str = "Hello";
+	const char* prefix = "world";
+	int newLenght = strlen(str) - strlen(prefix);
+	char* newStr = new char[newLenght + 1];
+	strcpy(newStr, prefix);
+	strcat(newStr, str);
 }
 
 bool MyString::operator=(MyString& obj)

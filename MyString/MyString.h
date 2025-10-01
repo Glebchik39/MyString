@@ -23,6 +23,9 @@ public:
 
 	static int count;
 	MyString operator +(MyString& obj);
+	MyString operator +(const char* str);
+	MyString operator + (char c);
+	MyString operator - (const char* str);
 	bool operator = (MyString& obj);
 	bool operator > (MyString& obj);
 	bool operator < (MyString& obj);
