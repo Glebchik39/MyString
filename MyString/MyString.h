@@ -19,7 +19,9 @@ public:
 	void MyStrCat(MyString& b); // объединение строк+
 	void MyDelChr(char c); // удаляет указанный символ +
 	int MyStrCmp(MyString& b); // сравнение строк +
+	static void PrintCount();
 
+	static int count;
 	MyString operator +(MyString& obj);
 	bool operator = (MyString& obj);
 	bool operator > (MyString& obj);

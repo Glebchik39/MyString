@@ -21,6 +21,7 @@ int main()
 	obj.MyDelChr('H');
 	obj.MyStrCmp(obj);
 	obj.Print();
+	MyString::PrintCount();
 	MyString rez = obj + obj1;
 	MyString rez2 = obj + " !!!";
 	MyString rez3 = obj + '?';
