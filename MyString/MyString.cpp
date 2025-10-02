@@ -239,6 +239,7 @@ MyString::MyString(MyString&& obj)
 //
 //	}
 //}
+//
 
 
 int MyString::count = 0;
