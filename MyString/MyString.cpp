@@ -223,6 +223,17 @@ bool MyString::operator>(const char* st)
 	return false;
 }
 
+MyString& MyString::operator++()
+{
+	const char* str = "Hello";
+	const char* space = " ";
+	int maxLength = strlen(str) + strlen(space);
+	char* newStr = new char[maxLength + 1];
+	strcpy(newStr, str);
+	strcat(newStr, str);
+	return *this;
+}
+
 
 
 MyString::MyString(MyString&& obj)
