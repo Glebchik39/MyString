@@ -52,4 +52,7 @@ int main()
 
 	}
 
+	MyString c = ++obj;
+	c.Print();
+
 }

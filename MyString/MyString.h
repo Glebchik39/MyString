@@ -21,7 +21,7 @@ public:
 	int MyStrCmp(MyString& b); // сравнение строк +
 	static void PrintCount();
 
-	static int count;
+	/*static int count;*/
 	MyString operator +(MyString& obj);
 	MyString operator +(const char* str);
 	MyString operator + (char c);
@@ -33,9 +33,11 @@ public:
 	bool operator <= (MyString& obj);
 	bool operator >(const char* st);
 
-	static void PrintCount();
+	MyString& operator++();
 
-	static int count;
+	/*static void PrintCount();*/
+
+	/*static int count;*/
 
 };
 
