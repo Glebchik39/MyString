@@ -234,6 +234,51 @@ MyString& MyString::operator++()
 	return *this;
 }
 
+MyString MyString::operator++(int)
+{
+	MyString temp = *this;
+	const char* str = "Hello";
+	const char* space = " ";
+	int maxLength = strlen(str) + strlen(space);
+	char* newStr = new char[maxLength + 1];
+	strcpy(newStr, str);
+	strcat(newStr, str);
+	return temp;
+}
+
+
+MyString& MyString::operator--()
+{
+	const char* str = "Hello";
+	const char* space = " ";
+	int maxLength = strlen(str) + strlen(space);
+	char* newStr = new char[maxLength + 1];
+	strstr("H", str);
+	delete[] str;
+	return *this;
+}
+
+MyString MyString::operator--(int)
+{
+	MyString temp = *this;
+	const char* str = "Hello";
+	const char* space = " ";
+	int maxLength = strlen(str) + strlen(space);
+	char* newStr = new char[maxLength + 1];
+	strstr("o", str);
+	delete[] str;
+	return temp;
+}
+
+
+
+
+void MyString::PrintCount()
+{
+	cout << count;
+}
+
+
 
 
 MyString::MyString(MyString&& obj)
