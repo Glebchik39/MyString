@@ -136,142 +136,161 @@ int MyString::MyStrCmp(MyString& b)
 	count++;
 }
 
-MyString MyString::operator+(MyString& obj)
-{
-	int newLenght = obj.length + length;
-	char* newstr = new char[newLenght + 1];
-	strcpy(newstr,obj.str);
-	return newstr;
-}
+//MyString MyString::operator+(MyString& obj)
+//{
+//	int newLenght = obj.length + length;
+//	char* newstr = new char[newLenght + 1];
+//	strcpy(newstr,obj.str);
+//	return newstr;
+//}
+//
+//MyString MyString::operator+(const char* str)
+//{
+//	const char* str = "Hello";
+//	const char* prefix = "!!!";
+//	int newLenght = strlen(str) + strlen(prefix);
+//	char* newStr = new char[newLenght + 1];
+//	strcpy(newStr, prefix);
+//	strcat(newStr, str);
+//}
+//
+//MyString MyString::operator+(char c)
+//{
+//}
+//
+//MyString MyString::operator-(const char* str)
+//{
+//	const char* str = "Hello";
+//	const char* prefix = "world";
+//	int newLenght = strlen(str) - strlen(prefix);
+//	char* newStr = new char[newLenght + 1];
+//	strcpy(newStr, prefix);
+//	strcat(newStr, str);
+//}
+//
+//bool MyString::operator=(MyString& obj)
+//{
+//	if (strcmp(str,obj.str) == 0)
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//bool MyString::operator>(MyString& obj)
+//{
+//	if (strlen(str) > strlen(obj.str))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//bool MyString::operator<(MyString& obj)
+//{
+//	if (strlen(str) < strlen(obj.str))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//bool MyString::operator>=(MyString& obj)
+//{
+//	if (strlen(str) >= strlen(obj.str))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//bool MyString::operator<=(MyString& obj)
+//{
+//	if (strlen(str) <= strlen(obj.str))
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//bool MyString::operator>(const char* st)
+//{
+//	int rez = strcmp(str, st);
+//	if (rez == 1)
+//	{
+//		return true;
+//	}
+//	return false;
+//}
+//
+//MyString& MyString::operator++()
+//{
+//	const char* str = "Hello";
+//	const char* space = " ";
+//	int maxLength = strlen(str) + strlen(space);
+//	char* newStr = new char[maxLength + 1];
+//	strcpy(newStr, str);
+//	strcat(newStr, str);
+//	return *this;
+//}
+//
+//MyString MyString::operator++(int)
+//{
+//	MyString temp = *this;
+//	const char* str = "Hello";
+//	const char* space = " ";
+//	int maxLength = strlen(str) + strlen(space);
+//	char* newStr = new char[maxLength + 1];
+//	strcpy(newStr, str);
+//	strcat(newStr, str);
+//	return temp;
+//}
+//
+//
+//MyString& MyString::operator--()
+//{
+//	const char* str = "Hello";
+//	const char* space = " ";
+//	int maxLength = strlen(str) + strlen(space);
+//	char* newStr = new char[maxLength + 1];
+//	strstr("H", str);
+//	delete[] str;
+//	return *this;
+//}
+//
+//MyString MyString::operator--(int)
+//{
+//	MyString temp = *this;
+//	const char* str = "Hello";
+//	const char* space = " ";
+//	int maxLength = strlen(str) + strlen(space);
+//	char* newStr = new char[maxLength + 1];
+//	strstr("o", str);
+//	delete[] str;
+//	return temp;
+//}
 
-MyString MyString::operator+(const char* str)
-{
-	const char* str = "Hello";
-	const char* prefix = "!!!";
-	int newLenght = strlen(str) + strlen(prefix);
-	char* newStr = new char[newLenght + 1];
-	strcpy(newStr, prefix);
-	strcat(newStr, str);
-}
 
-MyString MyString::operator+(char c)
-{
-}
 
-MyString MyString::operator-(const char* str)
-{
-	const char* str = "Hello";
-	const char* prefix = "world";
-	int newLenght = strlen(str) - strlen(prefix);
-	char* newStr = new char[newLenght + 1];
-	strcpy(newStr, prefix);
-	strcat(newStr, str);
-}
 
-bool MyString::operator=(MyString& obj)
+MyString& MyString::operator=(MyString& obj2)
 {
-	if (strcmp(str,obj.str) == 0)
+	if (this == &obj2)
 	{
-		return true;
+		return *this;
 	}
-	return false;
-}
 
-bool MyString::operator>(MyString& obj)
-{
-	if (strlen(str) > strlen(obj.str))
+	if (str != nullptr)
 	{
-		return true;
+		delete[]str;
 	}
-	return false;
-}
 
-bool MyString::operator<(MyString& obj)
-{
-	if (strlen(str) < strlen(obj.str))
-	{
-		return true;
-	}
-	return false;
-}
+	str = new char[strlen(obj2.str) + 1];
+	strcpy_s(str, strlen(obj2.str) + 1, obj2.str);
+	length = obj2.length;
 
-bool MyString::operator>=(MyString& obj)
-{
-	if (strlen(str) >= strlen(obj.str))
-	{
-		return true;
-	}
-	return false;
-}
-
-bool MyString::operator<=(MyString& obj)
-{
-	if (strlen(str) <= strlen(obj.str))
-	{
-		return true;
-	}
-	return false;
-}
-
-bool MyString::operator>(const char* st)
-{
-	int rez = strcmp(str, st);
-	if (rez == 1)
-	{
-		return true;
-	}
-	return false;
-}
-
-MyString& MyString::operator++()
-{
-	const char* str = "Hello";
-	const char* space = " ";
-	int maxLength = strlen(str) + strlen(space);
-	char* newStr = new char[maxLength + 1];
-	strcpy(newStr, str);
-	strcat(newStr, str);
 	return *this;
 }
-
-MyString MyString::operator++(int)
-{
-	MyString temp = *this;
-	const char* str = "Hello";
-	const char* space = " ";
-	int maxLength = strlen(str) + strlen(space);
-	char* newStr = new char[maxLength + 1];
-	strcpy(newStr, str);
-	strcat(newStr, str);
-	return temp;
-}
-
-
-MyString& MyString::operator--()
-{
-	const char* str = "Hello";
-	const char* space = " ";
-	int maxLength = strlen(str) + strlen(space);
-	char* newStr = new char[maxLength + 1];
-	strstr("H", str);
-	delete[] str;
-	return *this;
-}
-
-MyString MyString::operator--(int)
-{
-	MyString temp = *this;
-	const char* str = "Hello";
-	const char* space = " ";
-	int maxLength = strlen(str) + strlen(space);
-	char* newStr = new char[maxLength + 1];
-	strstr("o", str);
-	delete[] str;
-	return temp;
-}
-
-
-
 
 void MyString::PrintCount()
 {

@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	MyString obj("Hello world");
+	/*MyString obj("Hello world");
 	obj.Print();
 
 	cout<<obj.MyStrStr("wo")<<endl;
@@ -21,8 +21,8 @@ int main()
 	obj.MyDelChr('H');
 	obj.MyStrCmp(obj);
 	obj.Print();
-	MyString::PrintCount();
-	MyString rez = obj + obj1;
+	MyString::PrintCount();*/
+	/*MyString rez = obj + obj1;
 	MyString rez2 = obj + " !!!";
 	MyString rez3 = obj + '?';
 	MyString rez4 = obj - "world";
@@ -52,7 +52,13 @@ int main()
 
 	}
 
-	MyString c = ++obj;
-	c.Print();
+	MyString c = ++obj;*/
+	/*c.Print();*/
 
+	MyString obj("Glebanio");
+	obj.Print();
+
+	MyString obj2("Hello");
+	obj2 = obj;
+	obj2.Print();
 }

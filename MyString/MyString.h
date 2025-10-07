@@ -21,21 +21,22 @@ public:
 	int MyStrCmp(MyString& b); // сравнение строк +
 
 	/*static int count;*/
-	MyString operator +(MyString& obj);
-	MyString operator +(const char* str);
-	MyString operator + (char c);
-	MyString operator - (const char* str);
-	bool operator = (MyString& obj);
-	bool operator > (MyString& obj);
-	bool operator < (MyString& obj);
-	bool operator >= (MyString& obj);
-	bool operator <= (MyString& obj);
-	bool operator >(const char* st);
+	//MyString operator +(MyString& obj);
+	//MyString operator +(const char* str);
+	//MyString operator + (char c);
+	//MyString operator - (const char* str);
+	///*bool operator = (MyString& obj);*/
+	//bool operator > (MyString& obj);
+	//bool operator < (MyString& obj);
+	//bool operator >= (MyString& obj);
+	//bool operator <= (MyString& obj);
+	//bool operator >(const char* st);
 
-	MyString& operator++();
-	MyString operator++(int);
-	MyString& operator--();
-	MyString operator--(int);
+	//MyString& operator++();
+	//MyString operator++(int);
+	//MyString& operator--();
+	//MyString operator--(int);
+	MyString& operator = (MyString& obj2);
 
 
 
